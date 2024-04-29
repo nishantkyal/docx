@@ -127,7 +127,7 @@ export const patchDocument = async <T extends PatchDocumentOutputType = PatchDoc
             contexts.set(key, context);
 
             for (const [patchKey, patchValue] of Object.entries(patches)) {
-                const patchText = `{{${patchKey}}}`;
+                const patchText = `${patchKey}`;
                 // TODO: mutates json. Make it immutable
                 // We need to loop through to catch every occurrence of the patch text
                 // It is possible that the patch text is in the same run
